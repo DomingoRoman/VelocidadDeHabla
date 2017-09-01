@@ -157,9 +157,16 @@ paso_preg1 = paso_guion.replace("¿","")
 paso_preg2 = paso_preg1.replace("?","")
 paso_excla1 = paso_preg2.replace("¡","")
 paso_excla2 = paso_excla1.replace("!","")
+paso_paren1 = paso_excla2.replace("(","")
+paso_paren2 = paso_paren1.replace(")","")
+paso_paren3 = paso_paren2.replace("[","")
+paso_paren4 = paso_paren3.replace("]","")
+paso_barra1 = paso_paren4.replace("/","")
+# paso_barra2 = paso_barra1.replace("\","")
+
 
 # Escribe Ü como u
-transcripcion_final = paso_excla2.replace("ü", "u")
+transcripcion_final = paso_barra1.replace("ü", "u")
 
 #########################################
 # El siguiente paso cambia "t͡∫" por "c" para efectos de contar los fonemas
@@ -253,4 +260,5 @@ tf = (ene_de_fonemas/t)
 tp = (n_palabras/t)
 ts = (n_v/t)
 
-print(tf,tp,ts)
+print("Fonemas:",ene_de_fonemas,"Sílabas: ",n_v,"Palabras: ",n_palabras)
+print("Fonemas por segundo:",tf,"Sílabas por segundo:",ts,"Palabras por segundo:",tp)
