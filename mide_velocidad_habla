@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-#  vale.py
 #  
 #  Copyright 2017 imac <imac@iMac-de-imac.local>
 #  
@@ -143,10 +141,10 @@ paso_r13 = paso_r12.replace("cl", "kl")
 paso_rr2 = paso_r13.replace("00","r")
 
 # sustituye EÑE
-paso_ñ = paso_rr2.replace("ñ","ɲ")
+paso_n2 = paso_rr2.replace("ñ","ɲ")
 
 # Borra H y otros caracteres como ", ; :" etc.
-paso_h = paso_ñ.replace("h","")
+paso_h = paso_n2.replace("h","")
 paso_coma = paso_h.replace(",","")
 paso_pcoma = paso_coma.replace(";","")
 paso_2punt = paso_pcoma.replace(":","")
@@ -253,12 +251,21 @@ estructura_silabica = paso_c15.replace("r","c")
 n_v = estructura_silabica.count("v")
 
 t = float(input("duración"))
+t_pausas = float(input("tiempo de pausas"))
 
 # Unidades por segundo
 
 tf = (ene_de_fonemas/t)
 tp = (n_palabras/t)
 ts = (n_v/t)
+t_articulacion =(t-t_pausas)
 
-print("Fonemas:",ene_de_fonemas,"Sílabas: ",n_v,"Palabras: ",n_palabras)
-print("Fonemas por segundo:",tf,"Sílabas por segundo:",ts,"Palabras por segundo:",tp)
+print("Tiempo de articulación",t_articulacion)
+print("Número de pausas")
+print("Tiempo de pausas")
+
+
+
+print("Fonemas: ",ene_de_fonemas,"Sílabas: ",n_v,"Palabras: ",n_palabras)
+print("Fonemas por segundo: ",tf,"Sílabas por segundo: ",ts,"Palabras por segundo: ",tp)
+print("t de articulación: ",t_articulacion)
